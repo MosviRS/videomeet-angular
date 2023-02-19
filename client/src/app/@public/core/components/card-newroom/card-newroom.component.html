@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">Nueva reunion</div>
+  <div class="card-body">
+    <p class="card-text">
+      <span>Asunto: {{room.subject}}</span>
+    </p>
+    <p class="card-text">
+      <span>Titulo: {{room.title}}</span>
+    </p>
+    <div class="mb-2">
+      <label for="inputIdMeet" class="form-label">Id de la Reunion</label>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputIdMeet"
+          aria-describedby="idMeetHelp"
+          name="token"
+          id="inputToken" 
+          [(ngModel)]="room.uuid" 
+          #token="ngModel"
+          disabled
+        />
+        <button class="btn btn-outline-secondary" type="button">copy</button>
+      </div>
+      <div id="idMeetHelp" class="form-text">
+        Copia el id y compartelo con tus invitados para que puedan unirse a la
+        reunion.
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary">
+      Unirse a la reunion
+    </button>
+  </div>
+</div>

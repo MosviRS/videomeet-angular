@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center p-2">
+    <form #joinForm="ngForm" (ngSubmit)="onJoinSubmit(joinForm)" class="d-flex justify-content-center flex-column">
+      <div class="mb-3">
+        <label for="inputIdMeet" class="form-label">Id de la reunion</label>
+        <input
+          name="roomToken"
+          [(ngModel)]="join.roomToken" 
+          #roomToken="ngModel"
+          type="text"
+          class="form-control"
+          id="inputIdMeet"
+          aria-describedby="idMeetHelp"
+          required
+        />
+        <div id="idMeetHelp" class="form-text">
+            Al hacer clic en "Unirse" está aceptando nuestros Términos del servicio y nuestra Declaración de privacidad
+        </div>
+      </div>
+      <div class="mb-2">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input
+          type="text"
+          name="userName"
+          #userName="ngModel"
+          [(ngModel)]="join.name" 
+          class="form-control"
+          id="inputName"
+          aria-describedby="idNameHelp"
+          required
+        />
+        <div id="idNameHelp" class="form-text">
+            Elige un nombre para entrar a la reunion
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" [disabled]="joinForm.invalid">Unirse</button>
+      <a [routerLink]="['/newroom']" type="button" class="btn btn-secondary">
+        Crear una reunion
+      </a>
+    </form>
+  </div>
+</div>

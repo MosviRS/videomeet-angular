@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light navbar-custom">
+  <div class="container-fluid">
+    <div class="d-flex flex-column bd-highlight">
+      <p class="text-secondary me-2 subject mb-0">Subject</p>
+      <span class="text-white title">Title</span>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="me-2">
+        <input
+          type="radio"
+          class="btn-check"
+          name="options"
+          id="option1"
+          [value]="ModeCallType.Doc"
+          [(ngModel)]="toggleModeCall" 
+          autocomplete="off"
+          [checked]="toggleModeCall === ModeCallType.Doc"
+        />
+        <label class="btn text-white" for="option1">Document</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          class="btn-check"
+          name="options"
+          [value]="ModeCallType.Meet"
+          id="option2"
+          [(ngModel)]="toggleModeCall" 
+          autocomplete="off"
+          [checked]="toggleModeCall === ModeCallType.Meet"
+        />
+        <label class="btn text-white" for="option2">Meet</label>
+      </div>
+    </div>
+    <br>
+  </div>
+</nav>

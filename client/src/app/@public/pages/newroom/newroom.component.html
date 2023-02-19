@@ -1,0 +1,12 @@
+<div class="container-sm mt-3">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <app-form-newroom (ngSubmit)="recipeRoom($event)"></app-form-newroom>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <app-card-newroom [roomData]="room"></app-card-newroom>
+    </div>
+  </div>
+</div>

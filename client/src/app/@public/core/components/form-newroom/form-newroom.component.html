@@ -1,0 +1,17 @@
+<form #roomForm="ngForm" (ngSubmit)="onSubmit(roomForm)" class="d-flex justify-content-center flex-column">
+    <div class="mb-2">
+      <label for="inputSubjectMeet" class="form-label"
+        >Asunto de la reunion</label
+      >
+      <input name="subject" type="text" class="form-control" id="inputSubjectMeet" [(ngModel)]="room.subject" #subject="ngModel" required />
+      <p [hidden]="subject.valid || subject.pristine" class="help-block text-danger">Porfavor introduce el asunto</p>
+    </div>
+    <div class="mb-2">
+      <label for="inputTitle" class="form-label">Titulo</label>
+      <input name="title" type="text" class="form-control" id="inputTitle" [(ngModel)]="room.title" #title="ngModel" required/>
+      <p [hidden]="title.valid || title.pristine" class="help-block text-danger">Porfavor introduce el titulo</p>
+    </div>
+    <button [disabled]="roomForm.invalid" type="submit" class="btn btn-primary mb-2">
+      Crear reunion
+    </button>
+</form>
