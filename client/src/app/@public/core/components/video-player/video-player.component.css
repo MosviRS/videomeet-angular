@@ -1,0 +1,14 @@
+.custom-container{
+    position: relative;
+}
+.video-player{
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+    max-height: 200px;
+}
+.label-name{
+    position: absolute;
+    bottom: 10%;
+    left: 30px;
+}

@@ -20,6 +20,14 @@ export class FormNewroomService {
       catchError((err)=>this.handlerError(err))
     );
   }
+  getRoom(idRoom:string):Observable<RoomResponse | void>{
+    return this.http.get<RoomResponse>(`${environment.API_URL}/room/${idRoom}`).pipe(
+      map((room:RoomResponse)=>{
+        return room;
+      }),
+      catchError((err)=>this.handlerError(err))
+    );
+  }
   private handlerError(err:any): Observable<never> {
     let errorMessage = 'An errror occured retrienving data';
     if (err) {
