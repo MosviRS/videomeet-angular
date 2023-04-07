@@ -6,6 +6,7 @@ import { HeaderComponent } from '@/app/@public/core/components/header/header.com
 import { PublicComponent } from './public.component';
 import { ContainerComponent } from '@/app/@public/core/components/container/container.component';
 
+
 @NgModule({
   declarations: [PublicComponent,ContainerComponent,HeaderComponent],
   imports: [
