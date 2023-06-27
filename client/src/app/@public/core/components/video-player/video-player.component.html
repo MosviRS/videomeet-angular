@@ -1,6 +1,6 @@
 <div class="wrapper-video container custom-container" *ngIf="stream">
-    <video class="video-player p-1" [srcObject]="stream" autoplay></video>
+    <video class="video-player p-1" [srcObject]="stream.media" [muted]="true" autoplay></video>
     <div class="label-name text-white">
-      <span>Name</span>
+      <span>{{stream.member.user?.name}}</span>
     </div>
 </div>

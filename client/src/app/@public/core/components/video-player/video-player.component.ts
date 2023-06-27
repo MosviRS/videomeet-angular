@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { UserStream } from '@/app/@shared/models/call/RoomUser.model';
 
 @Component({
   selector: 'app-video-player',
@@ -6,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./video-player.component.css']
 })
 export class VideoPlayerComponent implements OnInit {
-  @Input("streamMediaDevice") stream: any;
+  @Input("streamMediaDevice") stream: UserStream;
   constructor() { }
 
   ngOnInit(): void {

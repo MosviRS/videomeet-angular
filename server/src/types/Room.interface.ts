@@ -10,5 +10,5 @@ export interface RoomInput {
  subject:string;
 }
 export interface RoomOutput extends Output{
-    room:RoomModel | null
+    room?:RoomModel;
 }

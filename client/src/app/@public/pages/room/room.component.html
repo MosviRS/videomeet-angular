@@ -1,6 +1,6 @@
-<div class="room-container">
-  <div class="wrapper-room">
-    <app-video-player [streamMediaDevice]="streamUser" *ngFor="let streamUser of listStreamUser"></app-video-player>
+<div class="wrapper-room" >
+    <app-video-player [streamMediaDevice]="myUserStream"></app-video-player>
+    <app-video-player [streamMediaDevice]="item.value" *ngFor="let item of streamUsers | keyvalue"></app-video-player>
   </div>
-  <app-bottom-menu></app-bottom-menu>
-</div>
+<app-bottom-menu></app-bottom-menu>
+

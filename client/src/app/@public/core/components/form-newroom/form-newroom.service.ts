@@ -28,12 +28,14 @@ export class FormNewroomService {
       catchError((err)=>this.handlerError(err))
     );
   }
+
   private handlerError(err:any): Observable<never> {
-    let errorMessage = 'An errror occured retrienving data';
+    let errorMessage = '';
+    let errorUserMessage = 'An errror occured retrienving data';
     if (err) {
       errorMessage = `Error: code ${err.message}`;
     }
-    window.alert(errorMessage);
+    window.alert(errorUserMessage);
     return throwError(errorMessage);
   }
 }
