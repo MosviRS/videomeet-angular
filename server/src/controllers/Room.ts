@@ -4,7 +4,7 @@ import { handleHttp } from "../utils/error";
 const createRoom = async ({ body }: Request, res: Response) => {
   try{
     const response = await createNewRoom(body);
-    res.json(response);
+    res.json(response).status(response.code);;
   }catch(error:any){
     handleHttp(res, error);
   }
@@ -14,7 +14,7 @@ const getRoom = async ({ params }: Request, res: Response) => {
   try {
      const { id } = params;
      const response = await findRoom(id);
-     res.json(response);
+     res.json(response).status(response.code);;
    } catch (e) {
      handleHttp(res, "ERROR_GET_ITEM");
    } 

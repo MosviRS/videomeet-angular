@@ -1,15 +1,17 @@
 import { Injectable,EventEmitter } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { io,Socket } from "socket.io-client";
+import { SocketProvider } from './socketprovider.service';
+import {Event} from "@/app/@shared/models/call/Events";
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
-
-  events = ['new-user', 'bye-user'];
+  events = [Event.JOIN,Event.DISCONNECT];
   cbEvent: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor(private socket: Socket) {
+  private socket: Socket;
+  constructor(private socketProvider: SocketProvider) {
+    this.socket = this.socketProvider.getSocketInstance();
     this.listener();
   }
 
@@ -24,5 +26,8 @@ export class WebsocketService {
 
   joinRoom = (data:any) => {
     this.socket.emit('join', data);
+  }
+  leftRoom = (data:any) => {
+    this.socket.emit('disconnect', data);
   }
 }

@@ -5,9 +5,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PublicModule } from '@/app/@public/pages/public.module';
 import {HttpClientModule} from "@angular/common/http";
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-const config: SocketIoConfig = { url: 'http://localhost:8988', options: {withCredentials:false} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +14,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8988', options: {withCre
     FormsModule,
     PublicModule,
     AppRoutingModule,
-    HttpClientModule,
-    SocketIoModule.forRoot(config)
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

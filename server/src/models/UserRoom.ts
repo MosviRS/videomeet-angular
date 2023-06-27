@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
-import { sequelize } from "@/lib/db";
-import {User} from "@/models/User";
-import { Room } from "@/models/Room";
+import { sequelize } from "../lib/db";
+import {User} from "./User";
+import { Room } from "./Room";
 
 export class UserRoom extends Model {
   public id_user_room!:string;
@@ -18,14 +18,6 @@ UserRoom.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    },
-    createAt: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-    },
-    finishedAt: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
     },
     fk_user: {
       type: DataTypes.INTEGER,
@@ -45,11 +37,10 @@ UserRoom.init(
 
 // Establece la relación entre UserRoom y User
 UserRoom.belongsTo(User, {
+  as: 'user',
   foreignKey: "fk_user",
-  as: "User",
 });
 // Establece la relación entre UserRoom y Room
 UserRoom.belongsTo(Room, {
     foreignKey: "fk_room",
-    as: "Room",
   });

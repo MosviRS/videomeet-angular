@@ -5,7 +5,7 @@ import Peer from 'peerjs';
   providedIn: 'root'
 })
 export class PeerService {
-  peer: any;
+  peer: Peer;
   constructor() {
     this.peer = new Peer({
       host: 'localhost',
